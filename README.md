@@ -1,3 +1,3 @@
 Github Finder
 
-Github Finder I created in React using Github API
+Github Finder App I created in React using Github API
