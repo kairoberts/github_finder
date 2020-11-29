@@ -5,6 +5,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  padding: 2rem 8rem 0rem 8rem;
+}
+
+/* Header Section */
+
 header {
   min-height: 9vh;
   text-align: center;
@@ -15,11 +21,41 @@ header {
 
 header h1 {
   font-weight: lighter;
+  margin-right: auto;
+  position: absolute;
+  left: 0%;
+  margin-left: 1rem;
 }
 
 .icon {
   margin: 0rem 1rem -0.4rem 0rem;
 }
+
+.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-items {
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 2rem;
+  color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  list-style: none;
+}
+
+li {
+  margin: 0.7rem;
+  margin-right: 3rem;
+}
+
+/* Users Section */
 
 .users {
   background-color: transparent;
@@ -38,7 +74,7 @@ header h1 {
   margin-left: 6.5rem;
 }
 
-a {
+.more {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -52,14 +88,12 @@ a {
   transition: all 0.5s ease;
 }
 
-a:hover {
-  background-color: #6b42ff;
+.more:hover {
+  background: #6b42ff;
   color: white;
 }
 
-.container {
-  padding: 2rem 8rem 0rem 8rem;
-}
+/* UserItems Section */
 
 .userstyle {
   display: grid;
@@ -74,7 +108,7 @@ form input {
   margin: 1rem;
 }
 
-#input-search {
+.input-search {
   font-size: 1rem;
   cursor: pointer;
   outline: none;
@@ -85,7 +119,7 @@ form input {
   transition: all 0.5s ease;
 }
 
-#input-search:hover {
+.input-search:hover {
   background-color: #6b42ff;
   color: white;
 }
@@ -105,4 +139,69 @@ button {
 
 button:hover {
   background-color: #ffa1f2;
+}
+
+/* Alert Section */
+
+.alert {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  border: 1px solid red;
+  text-align: center;
+  font-size: 1.3rem;
+  color: red;
+}
+
+.alert-icon {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* About Section */
+
+.card {
+  display: flex;
+  border: 1px solid black;
+  height: 40vh;
+  margin: 1rem;
+  text-align: center;
+}
+
+.card img {
+  border-radius: 50%;
+  margin: 2rem;
+  height: 25vh;
+}
+
+.info-container {
+  margin: 0 auto;
+}
+
+.info-container p {
+  margin: 0rem 3rem 2rem 3rem;
+}
+
+.info-container h3 {
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.more {
+  margin: 1rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.info {
+  margin-top: 7rem;
 }
