@@ -1,97 +1,108 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Spinner from "./Spinner";
+import Repos from "../components/Repos";
 import { Link } from "react-router-dom";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
 
-class User extends Component {
-  componentDidMount() {
-    this.props.getUser(this.props.match.params.login);
-  }
+const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
+  useEffect(() => {
+    getUser(match.params.login);
+    getUserRepos(match.params.login);
+    //eslint-disable-next-line
+  }, []);
 
-  static propTypes = {
-    loading: PropTypes.bool,
-    user: PropTypes.object.isRequired,
-    GetUser: PropTypes.func,
-  };
-  render() {
-    const {
-      name,
-      avatar_url,
-      location,
-      bio,
-      company,
-      blog,
-      login,
-      html_url,
-      followers,
-      following,
-      public_repos,
-      public_gists,
-      hireable,
-    } = this.props.user;
+  const {
+    name,
+    avatar_url,
+    location,
+    bio,
+    company,
+    blog,
+    login,
+    html_url,
+    followers,
+    following,
+    public_repos,
+    public_gists,
+    hireable,
+  } = user;
 
-    const { loading } = this.props;
+  if (loading) return <Spinner />;
 
-    if (loading) return <Spinner />;
+  return (
+    <>
+      <Link to="/">
+        <IoChevronBackCircleOutline size={50} style={{ color: "black" }} />
+      </Link>
 
-    return (
-      <>
-        <Link to="/">
-          <IoChevronBackCircleOutline size={50} style={{ color: "black" }} />
-        </Link>
-
-        <div className="card">
-          <div className="card-container">
-            <img src={avatar_url} alt={login} />
-            <h2>{name}</h2>
-            <p>Location: {location}</p>
-          </div>
-          <div className="info-container">
-            <h3>Bio:</h3>
-            <p>{bio}</p>
+      <div className="card">
+        <div className="card-container">
+          <img src={avatar_url} alt={login} />
+          <h2>{name}</h2>
+          <p>
+            <strong>Location:</strong> {location}
+          </p>
+          <p>
+            <strong>Username: </strong> {login}
+          </p>
+          <p>
+            <strong>Company: </strong> {company}
+          </p>
+          <p>
+            <strong>Website: </strong> {blog}
+          </p>
+          <p>
+            <strong>Hireable:</strong>
+            {hireable ? (
+              <TiTick size={30} style={{ color: "green" }} />
+            ) : (
+              <ImCross size={20} style={{ color: "red" }} />
+            )}
+          </p>
+        </div>
+        <div className="info-container">
+          <h2>Bio:</h2>
+          <p>{bio}</p>
+          <div className="btn-container">
             <a
               href={html_url}
               alt="URL"
               className="more"
-              ref="noreferrer nofollow"
+              style={{
+                color: "white",
+                backgroundColor: "green",
+                border: "none",
+              }}
             >
               Visit GitHub Profile
             </a>
-            <div className="info">
-              <ul>
-                <li>
-                  <strong>Username: </strong> {login}
-                </li>
-                <li>
-                  <strong>Company: </strong> {company}
-                </li>
-                <li>
-                  <strong>Website: </strong> {blog}
-                </li>
-                <li>
-                  Hireable:
-                  {hireable ? (
-                    <TiTick size={30} style={{ color: "green" }} />
-                  ) : (
-                    <ImCross size={20} style={{ color: "red" }} />
-                  )}
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
-        <div className="cards">
-          <div>Followers: {followers}</div>
-          <div>Following: {following}</div>
-          <div>Public Repos: {public_repos}</div>
-          <div>Public Gists: {public_gists}</div>
+        <div className="repo-container">
+          <h3>Recent Repos:</h3>
+          <Repos repos={repos} />
         </div>
-      </>
-    );
-  }
-}
+      </div>
+
+      <div className="cards">
+        <div>Followers: {followers}</div>
+        <div>Following: {following}</div>
+        <div>Public Repos: {public_repos}</div>
+        <div>Public Gists: {public_gists}</div>
+      </div>
+    </>
+  );
+};
+
+User.propTypes = {
+  loading: PropTypes.bool,
+  user: PropTypes.object.isRequired,
+  repos: PropTypes.array.isRequired,
+  getUser: PropTypes.func.isRequired,
+  getUserRepos: PropTypes.func.isRequired,
+};
 
 export default User;

@@ -9,7 +9,7 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
       <h3>{login}</h3>
       <div className="container">
         <Link to={`/user/${login}`} alt={login} className="more">
-          More
+          Profile
         </Link>
       </div>
     </div>
