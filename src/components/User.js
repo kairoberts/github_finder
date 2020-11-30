@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useContext } from "react";
 import Spinner from "./Spinner";
 import Repos from "../components/Repos";
 import { Link } from "react-router-dom";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
+import GithubContext from "../context/github/githubContext";
 
-const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
+const User = ({ match }) => {
+  const githubContext = useContext(GithubContext);
+  const { getUser, loading, user, repos, getUserRepos } = githubContext;
+
+  // Get the users login and matches it to the api login information
   useEffect(() => {
     getUser(match.params.login);
     getUserRepos(match.params.login);
@@ -95,14 +99,6 @@ const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
       </div>
     </>
   );
-};
-
-User.propTypes = {
-  loading: PropTypes.bool,
-  user: PropTypes.object.isRequired,
-  repos: PropTypes.array.isRequired,
-  getUser: PropTypes.func.isRequired,
-  getUserRepos: PropTypes.func.isRequired,
 };
 
 export default User;
