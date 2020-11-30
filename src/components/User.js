@@ -66,24 +66,15 @@ const User = ({ match }) => {
               <ImCross size={20} style={{ color: "red" }} />
             )}
           </p>
+          <div className="btn-container">
+            <a href={html_url} alt="URL" className="visit-btn">
+              Visit GitHub Profile
+            </a>
+          </div>
         </div>
         <div className="info-container">
           <h2>Bio:</h2>
           <p>{bio}</p>
-          <div className="btn-container">
-            <a
-              href={html_url}
-              alt="URL"
-              className="more"
-              style={{
-                color: "white",
-                backgroundColor: "green",
-                border: "none",
-              }}
-            >
-              Visit GitHub Profile
-            </a>
-          </div>
         </div>
         <div className="repo-container">
           <h3>Recent Repos:</h3>
@@ -92,10 +83,10 @@ const User = ({ match }) => {
       </div>
 
       <div className="cards">
-        <div>Followers: {followers}</div>
-        <div>Following: {following}</div>
-        <div>Public Repos: {public_repos}</div>
-        <div>Public Gists: {public_gists}</div>
+        <div className="repos">Followers: {followers}</div>
+        <div className="repos">Following: {following}</div>
+        <div className="repos">Public Repos: {public_repos}</div>
+        <div className="repos">Public Gists: {public_gists}</div>
       </div>
     </>
   );

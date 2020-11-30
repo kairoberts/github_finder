@@ -59,20 +59,16 @@ li {
 
 .users {
   background-color: transparent;
-  height: 45vh;
+  height: 40vh;
   width: 100%;
   border: 0.5px solid black;
-  margin: 0 auto;
-  display: grid;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  padding: 3rem;
 }
 
 .users img {
   height: 20vh;
   border-radius: 50%;
-  margin-left: 3.5rem;
 }
 
 .more {
@@ -174,9 +170,31 @@ button:hover {
 .card {
   display: flex;
   border: 1px solid black;
-  height: 65vh;
+  height: 70vh;
   width: 100%;
-  position: relative;
+}
+
+.visit-btn {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid green;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.visit-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.user-btn-container {
+  margin: 2rem 0rem 2rem 0rem;
+}
+
+.btn-container {
+  margin: 2rem 0rem 0rem 3rem;
 }
 
 .card p,
@@ -194,12 +212,6 @@ h2 {
 .info-container {
   padding: 3rem 0rem 0rem 0rem;
   text-align: left;
-}
-
-.btn-container {
-  margin: 3rem;
-  position: absolute;
-  bottom: 0;
 }
 
 .cards {
@@ -224,4 +236,73 @@ h2 {
   height: 2rem;
   text-align: center;
   margin: 3rem;
+}
+
+.users img {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 580px) {
+  * {
+    padding: 0%;
+    margin: 0%;
+  }
+  .container {
+    padding: 1rem 2rem 5rem 2rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .icon {
+    width: 20%;
+  }
+  .nav-items {
+    font-size: 1rem;
+    margin: 0rem;
+  }
+  li {
+    margin: 1rem;
+    margin-right: 1rem;
+  }
+  .search-bar {
+    border: 1px solid black;
+  }
+  .users {
+    display: block;
+    margin-top: 1rem;
+  }
+  .userstyle {
+    display: block;
+  }
+  .card {
+    display: block;
+    height: auto;
+  }
+  .card img {
+    height: 20rem;
+  }
+  .repo-container {
+    display: block;
+    margin: 4rem;
+  }
+  .repo-cards {
+    margin-top: 3rem;
+  }
+  .repos {
+    margin: 1rem;
+  }
+  .cards {
+    display: block;
+    text-align: center;
+  }
+  .btn-container {
+    margin: 2rem 0rem 0rem 6rem;
+  }
+  .more {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin: -5rem;
+  }
 }

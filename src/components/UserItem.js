@@ -7,7 +7,7 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
     <div className="users">
       <img src={avatar_url} alt={login} />
       <h3>{login}</h3>
-      <div className="container">
+      <div className="user-btn-container">
         <Link to={`/user/${login}`} alt={login} className="more">
           Profile
         </Link>
