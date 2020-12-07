@@ -29,7 +29,7 @@ const Nav = ({ icon, title }) => {
 };
 
 Nav.defaultProps = {
-  title: "Github Finder",
+  title: "GitHub Finder",
   icon: <FaGithub size={40} className="icon" />,
 };
 
