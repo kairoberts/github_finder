@@ -5,6 +5,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  background-color: rgb(73, 73, 73);
+}
+
 .container {
   padding: 3rem 5rem 2rem 5rem;
 }
@@ -15,7 +19,7 @@ header {
   min-height: 9vh;
   text-align: center;
   padding-top: 1rem;
-  background: #6b42ff;
+  background: #888888;
   color: white;
 }
 
@@ -66,6 +70,10 @@ li {
   padding: 3rem;
 }
 
+.users h3 {
+  color: white;
+}
+
 .users img {
   height: 20vh;
   border-radius: 50%;
@@ -73,6 +81,8 @@ li {
 
 .header-search {
   text-align: center;
+  color: white;
+  font-weight: lighter;
   margin: 0rem 0rem 3rem 0rem;
 }
 
@@ -84,7 +94,7 @@ li {
   outline: none;
   border: 2px solid #6b42ff;
   background-color: transparent;
-  color: black;
+  color: white;
   text-decoration: none;
   transition: all 0.5s ease;
 }
@@ -109,7 +119,9 @@ form input {
 }
 
 .search-bar {
-  width: 100%;
+  width: 50%;
+  transform: translateX(50%);
+  border-radius: 2rem;
   font-size: 1rem;
   padding: 0.5rem;
   border: none;
@@ -123,9 +135,13 @@ form input {
   cursor: pointer;
   outline: none;
   height: 3rem;
+  width: 40%;
+  border-radius: 1rem;
+  display: block;
+  transform: translateX(74%);
   border: 2px solid #6b42ff;
   background-color: transparent;
-  color: black;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -139,11 +155,13 @@ button {
   cursor: pointer;
   height: 3rem;
   outline: none;
-  width: 100%;
+  width: 30%;
+  border-radius: 1rem;
+  transform: translateX(115%);
   margin: 0rem 0rem 1rem 0rem;
   border: 2px solid #ffa1f2;
   background-color: transparent;
-  color: black;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -160,7 +178,6 @@ button:hover {
   align-items: center;
   justify-content: center;
   height: 3rem;
-  border: 1px solid red;
   text-align: center;
   font-size: 1.3rem;
   color: red;
@@ -174,7 +191,7 @@ button:hover {
 /* About Section */
 .card {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid white;
   height: 70vh;
   width: 100%;
 }
@@ -185,7 +202,7 @@ button:hover {
   text-decoration: none;
   background-color: transparent;
   border: 2px solid green;
-  color: black;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -206,6 +223,7 @@ button:hover {
 h2 {
   margin: 0.2rem 0rem 0rem 0rem;
   text-align: center;
+  color: white;
 }
 
 .card img {
@@ -222,9 +240,13 @@ h2 {
 .cards {
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 1rem;
   padding: 1rem;
+}
+
+.repos {
+  color: white;
 }
 
 .repo-container {
@@ -234,6 +256,7 @@ h2 {
 .repo-container h3 {
   text-align: center;
   margin-top: 1rem;
+  color: white;
 }
 
 .repo-cards {
@@ -264,7 +287,7 @@ h2 {
     width: 20%;
   }
   .nav-items {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0rem;
   }
   li {
@@ -272,6 +295,8 @@ h2 {
     margin-right: 1rem;
   }
   .search-bar {
+    width: 100%;
+    transform: translateX(0);
     border: 1px solid black;
   }
   .users {

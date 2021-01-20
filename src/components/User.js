@@ -39,7 +39,7 @@ const User = ({ match }) => {
   return (
     <>
       <Link to="/">
-        <IoChevronBackCircleOutline size={50} style={{ color: "black" }} />
+        <IoChevronBackCircleOutline size={50} style={{ color: "white" }} />
       </Link>
 
       <div className="card">
